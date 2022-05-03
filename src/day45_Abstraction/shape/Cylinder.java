@@ -1,34 +1,10 @@
 package day45_Abstraction.shape;
 
-public class Cylinder extends Shape{
+public class Cylinder extends Shape implements Volume{
 
-    private double radius;
-    private int height;
-    private final double pi = 3.14;
 
-    public Cylinder(double radius, int height) {
-        super("Cylinder");
-        setRadius(radius);
-        setHeight(height);
-    }
-
-    public double getRadius() {
-        return radius;
-    }
-
-    public void setRadius(double radius) {
-        if (radius < 0){
-            throw new RuntimeException("Invalid radius: " + radius);
-        }
-        this.radius = radius;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
+    public Cylinder(String name) {
+        super(name);
     }
 
     @Override
@@ -38,6 +14,11 @@ public class Cylinder extends Shape{
 
     @Override
     public double perimeter() {
+        return 0;
+    }
+
+    @Override
+    public double volume() {
         return 0;
     }
 }
