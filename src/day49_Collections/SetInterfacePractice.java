@@ -30,9 +30,25 @@ public class SetInterfacePractice {
 
 
         Set<Integer> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        linkedHashSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        linkedHashSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        linkedHashSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        linkedHashSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        linkedHashSet.addAll(Arrays.asList(null, null, null));
+
+        System.out.println("linkedHashSet = " + linkedHashSet);
 
 
         Set<Integer> treeSet = new TreeSet<>();
+        treeSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        treeSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        treeSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        treeSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        treeSet.addAll(Arrays.asList(10, 200, 300, 40, 90));
+        //treeSet.addAll(Arrays.asList(null, null, null)); It does not accept null values(NullPointerException)
+
+        System.out.println("treeSet = " + treeSet);
 
 
     }
