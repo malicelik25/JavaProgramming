@@ -19,7 +19,7 @@ public class MapPractice2 {
         map.put("Anderson", 125000);
         map.put("Steven", 135000);
 
-        //  1.1 who has the maximum and minimum salary?
+        //  who has the maximum and minimum salary?
 
         String name1 = "";
         int maxSalary = Integer.MIN_VALUE;
@@ -35,9 +35,52 @@ public class MapPractice2 {
                 maxSalary = eachValue;
                 name1 = eachKey;
             }
+
+            if (eachValue < minSalary){
+                minSalary = eachValue;
+                name2 = eachKey;
+            }
         }
 
         System.out.println(name1);
+        System.out.println(name2);
+
+
+        System.out.println("-------------------------------------");
+
+        // how many employees has the salary between 120k - 150k
+
+        int count = 0;
+
+        for (Integer eachValue : map.values()) {
+            if (eachValue >= 120000 && eachValue <= 150000){
+                count++;
+            }
+        }
+
+        System.out.println(count);
+
+        System.out.println("-------------------------------------");
+
+        // display the names of the employees who are making less than 118k
+
+        for (Map.Entry<String, Integer> pairs : map.entrySet()) {
+            if (pairs.getValue() < 118000){
+                System.out.println(pairs.getKey());
+            }
+        }
+
+        System.out.println("-------------------------------------");
+
+        // Increase the salary employee by 10k if the current salary of employee is less than 120k
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() < 120000){
+                entry.setValue(entry.getValue() + 10000);
+            }
+        }
+
+        System.out.println(map);
 
 
     }
