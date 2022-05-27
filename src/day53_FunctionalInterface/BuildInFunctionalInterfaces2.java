@@ -1,6 +1,8 @@
 package day53_FunctionalInterface;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 
 public class BuildInFunctionalInterfaces2 {
@@ -40,9 +42,66 @@ public class BuildInFunctionalInterfaces2 {
         };
 
         System.out.println("----------------------------------");
+        // create a function that can print the given string for given numbers of times
+        BiConsumer<String, Integer> printMultipleTimes = (s, n) -> {
+            for (Integer i = 0; i < n; i++) {
+                System.out.println(s);
+            }
+        };
 
+        printMultipleTimes.accept("Java", 5);
 
+        System.out.println("----------------------------------------");
 
+        Map<String, String> scrumTeam1 = new LinkedHashMap<>();
+        scrumTeam1.put("Abdulhamid", "SM");
+        scrumTeam1.put("Nikita", "Developer");
+        scrumTeam1.put("Alina", "Developer");
+        scrumTeam1.put("Mert", "PO");
+        scrumTeam1.put("Lee", "SDET");
+
+        /*
+        for (Map.Entry<String, String> entry : scrumTeam1.entrySet()) {
+            String k = entry.getKey();
+            String v = entry.getValue();
+            System.out.println(k + " : " + v);
+        }
+
+         */
+
+        scrumTeam1.forEach((k, v) -> System.out.println(k + " : " + v));
+
+        System.out.println("--------------------------------------------");
+
+        //1. create a function that takes two integers and returns the maximum integer
+        BiFunction<Integer, Integer, Integer> maxNum = (a, b) -> {
+            return a > b ? a : b;
+        };
+
+        int max = maxNum.apply(100, 200);
+
+        System.out.println(max);
+
+        //2. create a function that can merge two integer arrays into a list
+
+        BiFunction<int[], int[], List<Integer>> merge = (x, y) -> {
+            List<Integer> result = new ArrayList<>();
+            for (int each : x) {
+                result.add(each);
+            }
+
+            for (int each : y) {
+                result.add(each);
+            }
+
+            return result;
+        };
+
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {6, 7, 8};
+
+        List<Integer> nums = merge.apply(arr1, arr2);
+        System.out.println(nums);
 
     }
 
