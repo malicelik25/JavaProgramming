@@ -103,6 +103,33 @@ public class BuildInFunctionalInterfaces2 {
         List<Integer> nums = merge.apply(arr1, arr2);
         System.out.println(nums);
 
+        System.out.println("---------------------------------------");
+
+        //3. create a function that takes a list of String and a list of Integer and merge them into a map
+        /*
+        names ==> {"Josh", "Daniel"}
+        score ==> {100, 110}
+
+        map ==> {Josh=100, Daniel=110}
+         */
+
+        BiFunction<List<String>, List<Integer>, Map<String, Integer>> merge2 = (j, k) -> {
+            Map<String, Integer> map = new HashMap<>();
+            for (int i = 0; i < j.size(); i++) {
+                map.put(j.get(i), k.get(i));
+            }
+            return map;
+        };
+
+        List<String> names = new ArrayList<>(Arrays.asList("Layan", "Ksenia", "Aygun"));
+
+        List<Integer> scores = new ArrayList<>(Arrays.asList(90, 95, 98));
+
+        Map<String, Integer> students = merge2.apply(names, scores);
+
+        System.out.println(students);
+
+
     }
 
 }
