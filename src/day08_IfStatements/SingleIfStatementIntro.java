@@ -24,7 +24,7 @@ public class SingleIfStatementIntro {
         int n = 200;
 
         // positive
-        if (n > 0) {  // id the n is grater than zero, then it's positive
+        if (n > 0) {  // if the n is grater than zero, then it's positive
             System.out.println(n + " is positive");
         }
 
