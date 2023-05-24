@@ -15,7 +15,7 @@ public class GradeReport {
             System.out.println("Excellent");
         }
 
-        if (b) {    //if the student made aB
+        if (b) {    //if the student made a B
             System.out.println("Great");
         }
 
@@ -27,7 +27,7 @@ public class GradeReport {
             System.out.println("Passed");
         }
 
-        if (f) {   //if the student made F
+        if (f) {   //if the student made an F
             System.out.println("Failed");
         }
 

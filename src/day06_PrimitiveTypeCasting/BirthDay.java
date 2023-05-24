@@ -5,13 +5,13 @@ package day06_PrimitiveTypeCasting;
 
 			 use concatenation to display the birthday of the person
 
-			 	if  name = "aLİ"
+			 	if  name = "Ali"
 			 		birthDay = 15
 			 	    birthMonth = "January"
 			 	    birthYear = 1993;
 
 			 	output:
-			 		John was born on April/25/1995.
+			 		Ali was born on April/25/1995.
 
  */
 public class BirthDay {
